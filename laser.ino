@@ -1,20 +1,26 @@
 /// <summary>
 /// Use laser.
 /// </summary>
-// <copyright file="car.ini" company="lakatoshvv">
+// <copyright file="laser.ini" company="lakatoshvv">
 // Copyright (c) lakatoshvv. All rights reserved.
 // </copyright>
 
-int LASER_PIN = 10;
+const int LASER_PIN = 10;
+const int PUSH_BUTTON_SWITCH_PIN = 4;
 
 void setup ()
 {
-  pinMode(LASER_PIN, OUTPUT);
+    pinMode(LASER_PIN, OUTPUT);
+    pinMode(switchPin, INPUT);
 }
 
 void loop () {
-  digitalWrite(LASER_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LASER_PIN, LOW);
-  delay(1000);
+    // if button is pressed turn on laser
+    if (digitalRead(PUSH_BUTTON_SWITCH_PIN) == HIGH)
+    {
+        digitalWrite(LASER_PIN, HIGH);
+    }
+    else{
+        digitalWrite(LASER_PIN, LOW);
+    }
 }

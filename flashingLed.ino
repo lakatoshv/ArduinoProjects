@@ -6,8 +6,8 @@
 // </copyright>
 
 // Led pins
-int LED_PIN7 = 7;
-int LED_PIN8 = 8;
+const int LED_PIN7 = 7;
+const int LED_PIN8 = 8;
 
 void setup()
 {
@@ -19,6 +19,7 @@ void loop()
 {
     turnLightsOn();
     turnLightsOff();
+    flashingLights();
 }
 
 /// <summary>
@@ -37,6 +38,21 @@ void turnLightsOn()
 void turnLightsOff()
 {
     digitalWrite(LED_PIN7, LOW);
+    digitalWrite(LED_PIN8, LOW);
+    delay(1000);
+}
+
+/// <summary>
+/// Flashing Led lights.
+/// </summary>
+void flashingLights()
+{
+    digitalWrite(LED_PIN7, HIGH);
+    delay(1000);
+    digitalWrite(LED_PIN7, LOW);
+    delay(1000);
+    digitalWrite(LED_PIN8, HIGH);
+    delay(1000);
     digitalWrite(LED_PIN8, LOW);
     delay(1000);
 }

@@ -1,8 +1,12 @@
-#define LED_PIN     6
+/// <summary>
+/// Use Led RGB v2.
+/// </summary>
+// <copyright file="ledRGBv2.ini" company="lakatoshvv">
+// Copyright (c) lakatoshvv. All rights reserved.
+// </copyright>
 
 void setup()
 {
-  pinMode(A0,INPUT);
   //all pins are outputs and we are using 2 to 13
   for (int x =2;x<13;x++)
   {
@@ -15,7 +19,10 @@ void loop()
 {
    cycle();
 }
- 
+
+/// <summary>
+/// Use random color.
+/// </summary>
 void color()
 {
   int random1 = (rand() % 4) + 1;
@@ -36,6 +43,9 @@ void color()
   }
 }
  
+/// <summary>
+/// Turn Led light on.
+/// </summary>
 void cycle()
 {
   for(int x=5;x<13;x++)

@@ -42,14 +42,19 @@ void color()
 /// </summary>
 void cycle()
 {
-  for(int x=5;x<13;x++)
-  {
-    color();
-    digitalWrite(x,LOW);
-    delay(100);
-    digitalWrite(x,HIGH);
-  }
-  digitalWrite(2,HIGH);
-  digitalWrite(3,HIGH);
-  digitalWrite(4,HIGH);
+
+   for(int x=5, y = 12;x <= 8, y >= 9; x++, y--)
+   {
+      color();
+      delay(100);
+      digitalWrite(x,HIGH);
+      digitalWrite(y,HIGH);
+   }
+   delay(100);
+   for(int x=8, y = 9;x >= 5, y <= 12; x--, y++)
+   {
+      delay(100);
+      digitalWrite(x,LOW);
+      digitalWrite(y,LOW);
+   }
 }

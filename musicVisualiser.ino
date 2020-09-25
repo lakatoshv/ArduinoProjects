@@ -42,18 +42,20 @@ void color()
 /// </summary>
 void cycle()
 {
+   int potentiometerValue = analogRead(2) != 0 ? analogRead(2) : 250;
+   int speed = potentiometerValue / 4;
 
    for(int x=5, y = 12;x <= 8, y >= 9; x++, y--)
    {
       color();
-      delay(100);
-      digitalWrite(x,HIGH);
-      digitalWrite(y,HIGH);
+      delay(speed);
+      digitalWrite(x,potentiometerValue);
+      digitalWrite(y,potentiometerValue);
    }
    delay(100);
    for(int x=8, y = 9;x >= 5, y <= 12; x--, y++)
    {
-      delay(100);
+      delay(speed);
       digitalWrite(x,LOW);
       digitalWrite(y,LOW);
    }

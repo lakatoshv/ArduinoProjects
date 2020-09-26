@@ -80,3 +80,13 @@ void formCenterToSides()
       digitalWrite(y,LOW);
     }
 }
+
+void flashLedsFromPotentiometer()
+{
+  diodes = map (analogRead(2), 0, 1023, 5, 12) ;
+  for (robocode= 5; robocode<= diodes; robocode++ )
+  {
+    digitalWrite(robocode, LOW);
+    delay(1000);
+  }
+}

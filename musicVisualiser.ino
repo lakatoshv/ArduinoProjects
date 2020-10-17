@@ -1,16 +1,42 @@
+/// <summary>
+/// Use Led RGB v2.
+/// </summary>
+// <copyright file="ledRGBv2.ini" company="lakatoshvv">
+// Copyright (c) lakatoshvv. All rights reserved.
+// </copyright>
+
+const int POTENTIOMETER_PIN = 2;
+
+const int LEDS_COUNT = 8;
+const int RED_LED_RGB_PIN = 2;
+const int GREEN_LED_RGB_PIN = 3;
+const int BLUE_LED_RGB_PIN = 4;
+const int LED_RGB_PINS[LEDS_COUNT] = { 5, 6, 7, 8, 9, 10, 11, 12 };
+
+const int LEFT_LED_RGB_CENTER = 8;
+const int RIGHT_LED_RGB_CENTER = 9;
+
+const int SOUND_SENSOR_PIN = 0;
+
 void setup() {
-   pinMode(A0,INPUT); // к аналоговому входу A0 подключим датчик (англ. «intput»)
-   Serial.begin(9600); // подключаем монитор порта
-   //all pins are outputs and we are using 2 to 13
-   for (int x =2;x<13;x++)
+   pinMode(SOUND_SENSOR_PIN,INPUT);
+   Serial.begin(9600);
+
+   for (int ledPin = 0; ledPin < LEDS_COUNT; ledPin++)
    {
-      pinMode(x,OUTPUT);
-      digitalWrite(x,HIGH);
+      pinMode(LED_RGB_PINS[ledPin], OUTPUT);
+      digitalWrite(ledPin, HIGH);
    }
+
+  pinMode(RED_LED_RGB_PIN, OUTPUT);
+  digitalWrite(RED_LED_RGB_PIN, HIGH);
+  pinMode(GREEN_LED_RGB_PIN, OUTPUT);
+  digitalWrite(GREEN_LED_RGB_PIN, HIGH);
+  pinMode(BLUE_LED_RGB_PIN, OUTPUT);
+  digitalWrite(BLUE_LED_RGB_PIN, HIGH);
 }
 
 void loop() {
-   Serial.println (analogRead(A0));
    cycle();
 }
 
@@ -19,22 +45,23 @@ void loop() {
 /// </summary>
 void color()
 {
-  int random1 = (rand() % 4) + 1;
-  int random2 = (rand() % 4) + 1;
-  int random3 = (rand() % 4) + 1;
+   int random1 = (rand() % 4) + 1;
+   int random2 = (rand() % 4) + 1;
+   int random3 = (rand() % 4) + 1;
 
-  digitalWrite(2,LOW);
-  digitalWrite(3,LOW);
-  digitalWrite(4,LOW);
-  if(2 == random1 || 2 == random2 || 2 == random3) {
-    digitalWrite(2,HIGH);
-  }
-  if(3 == random1 || 3 == random2 || 3 == random3) {
-    digitalWrite(3,HIGH);
-  }
-  if(4 == random1 || 4 == random2 || 4 == random3) {
-    digitalWrite(4,HIGH);
-  }
+   digitalWrite(RED_LED_RGB_PIN, LOW);
+   digitalWrite(GREEN_LED_RGB_PIN, LOW);
+   digitalWrite(BLUE_LED_RGB_PIN, LOW);
+
+   if(RED_LED_RGB_PIN == random1 || RED_LED_RGB_PIN == random2 || RED_LED_RGB_PIN == random3) {
+      digitalWrite(RED_LED_RGB_PIN, HIGH);
+   }
+   if(GREEN_LED_RGB_PIN == random1 || GREEN_LED_RGB_PIN == random2 || GREEN_LED_RGB_PIN == random3) {
+      digitalWrite(GREEN_LED_RGB_PIN, HIGH);
+   }
+   if(BLUE_LED_RGB_PIN == random1 || BLUE_LED_RGB_PIN == random2 || BLUE_LED_RGB_PIN == random3) {
+      digitalWrite(BLUE_LED_RGB_PIN, HIGH);
+   }
 }
  
 /// <summary>
@@ -42,21 +69,21 @@ void color()
 /// </summary>
 void cycle()
 {
-   int potentiometerValue = analogRead(2) != 0 ? analogRead(2) : 250;
+   int potentiometerValue = analogRead(POTENTIOMETER_PIN) != 0 ? analogRead(POTENTIOMETER_PIN) : 250;
    int speed = potentiometerValue / 4;
 
-   for(int x=5, y = 12;x <= 8, y >= 9; x++, y--)
+   for(int leftLedPin = LED_RGB_PINS[0], rightLeftPin = LED_RGB_PINS[LEDS_COUNT]; leftLedPin <= LEFT_LED_RGB_CENTER, rightLeftPin >= RIGHT_LED_RGB_CENTER; leftLedPin++, rightLeftPin--)
    {
       color();
       delay(speed);
-      digitalWrite(x,potentiometerValue);
-      digitalWrite(y,potentiometerValue);
+      digitalWrite(leftLedPin, potentiometerValue);
+      digitalWrite(rightLeftPin, potentiometerValue);
    }
    delay(100);
-   for(int x=8, y = 9;x >= 5, y <= 12; x--, y++)
+   for(int leftLedPin = LEFT_LED_RGB_CENTER, rightLeftPin = RIGHT_LED_RGB_CENTER; leftLedPin >= LED_RGB_PINS[0], rightLeftPin <= LED_RGB_PINS[LEDS_COUNT]; leftLedPin--, rightLeftPin++)
    {
       delay(speed);
-      digitalWrite(x,LOW);
-      digitalWrite(y,LOW);
+      digitalWrite(leftLedPin, LOW);
+      digitalWrite(rightLeftPin, LOW);
    }
 }

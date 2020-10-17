@@ -5,8 +5,6 @@
 // Copyright (c) lakatoshvv. All rights reserved.
 // </copyright>
 
-const int WATER_LEVEL_SENSOR_PIN = 0;
-
 const int POTENTIOMETER_PIN = 2;
 
 const int LEDS_COUNT = 8;

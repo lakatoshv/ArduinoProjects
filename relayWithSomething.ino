@@ -1,0 +1,21 @@
+/// <summary>
+/// Use relay with something.
+/// </summary>
+// <copyright file="relayWithSomething.ini" company="lakatoshvv">
+// Copyright (c) lakatoshvv. All rights reserved.
+// </copyright>
+
+const int RELAY_PIN = 3;
+const int BUTTON_PIN = 4;
+
+void setup() {
+    pinMode(RELAY_PIN, OUTPUT);
+    pinMode(BUTTON_PIN, INPUT);
+}
+
+void loop() {
+    digitalWrite(RELAY_PIN, HIGH);
+    delay(5000);
+    digitalWrite(RELAY_PIN, LOW);
+    delay(3000);
+}

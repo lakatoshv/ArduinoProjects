@@ -14,6 +14,18 @@ void setup() {
 }
 
 void loop() {
+    if(digitalRead(BUTTON_PIN)){
+      digitalWrite(RELAY_PIN, HIGH);
+    }
+    else {
+      digitalWrite(RELAY_PIN, LOW);
+    }
+}
+
+/// <summary>
+/// Turn on of relay.
+/// </summary>
+void turnOnOfRelay() {
     digitalWrite(RELAY_PIN, HIGH);
     delay(5000);
     digitalWrite(RELAY_PIN, LOW);

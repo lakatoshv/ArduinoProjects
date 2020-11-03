@@ -17,6 +17,6 @@ void setup() {
 }
 
 void loop() {
-  lcd.clear();
+  lcd.setCursor(1-1, 1-1);
   lcd.print("Hello World!");
 }

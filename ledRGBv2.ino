@@ -76,6 +76,9 @@ void cycle()
   }
 }
 
+/// <summary>
+/// Turn Led light on from center to sides.
+/// </summary>
 void formCenterToSides()
 {
   int potentiometerValue = analogRead(POTENTIOMETER_PIN) != 0 ? analogRead(POTENTIOMETER_PIN) : 250;
@@ -97,6 +100,9 @@ void formCenterToSides()
     }
 }
 
+/// <summary>
+/// Turn Led light on by potentiometer.
+/// </summary>
 void flashLedsFromPotentiometer()
 {
   int diodes = map (analogRead(POTENTIOMETER_PIN), 0, 1023, LED_RGB_PINS[0], LED_RGB_PINS[LEDS_COUNT]) ;

@@ -62,6 +62,7 @@ void loop() {
 /// <summary>
 /// Display humidity.
 /// </summary>
+/// <param name="humidity">humidity.</param>
 void printHumidity(float humidity) {
   Serial.print(F("Humidity: "));
   Serial.print(humidity);
@@ -74,6 +75,8 @@ void printHumidity(float humidity) {
 /// <summary>
 /// Display temperature.
 /// </summary>
+/// <param name="c">c.</param>
+/// <param name="f">f.</param>
 void printTemperature(float c, float f) {
   Serial.print(F("%  Temperature: "));
   Serial.print(c);
@@ -95,6 +98,9 @@ void printTemperature(float c, float f) {
 /// <summary>
 /// Display heat index.
 /// </summary>
+/// <param name="c">c.</param>
+/// <param name="f">f.</param>
+/// <param name="h">h.</param>
 void printHeatIndex(float c, float f, float h) {
   // Compute heat index in Fahrenheit (the default)
   float hif = dht.computeHeatIndex(f, h);

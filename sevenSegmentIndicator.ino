@@ -21,6 +21,9 @@ void loop(){
     displayDigit(4);       
 }
 
+/// <summary>
+/// Use joystic.
+/// </summary>
 void useJoystic() {
     // put your main code here, to run repeatedly:
     int xValue = analogRead(joyX);
@@ -37,6 +40,9 @@ void useJoystic() {
     }
 }
 
+/// <summary>
+/// Display digit.
+/// </summary>
 void displayDigit(int number) {
     sevseg.setNumber(number);
     delay(1000);

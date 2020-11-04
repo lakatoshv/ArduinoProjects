@@ -13,6 +13,7 @@ void setup()
   Serial.begin(9600);
   delay(500);
 }
+
 void loop() 
 {
   float temperature = (analogRead(TEMPERATURE_SENSOR_PIN) / 1024.0) * 5000;

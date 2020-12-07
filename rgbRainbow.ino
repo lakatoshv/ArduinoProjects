@@ -39,6 +39,7 @@ void loop()
 void displayRainbowColors()
 {
     fromRedToYellowColor();
+    fromYellowToGreen();
 }
 
 /// <summary>
@@ -53,6 +54,22 @@ void fromRedToYellowColor()
     for(green = 0; green <= 255; green++) 
     {
         setRGB(red, green, blue); 
+    }
+    setpause();
+}
+
+/// <summary>
+/// From yellow to green colors.
+/// </summary>
+void fromYellowToGreen()
+{
+    Serial.println("yellow - green"); 
+    red = 255;
+    green = 255;
+    blue = 0; 
+    for(red = 255; red >= 0; red--)
+    {
+        setRGB(red, green, blue);
     }
     setpause();
 }

@@ -21,8 +21,8 @@ void setup () {
     
 }
 void loop() {
-    sensorValue = analogRead (analoglnPin);
-    timer = map(sensorValue, 0, 1023, 10, 500);
+    potentiometerValue = analogRead (POTENTIOMETER_PIN);
+    timer = map(potentiometerValue, 0, 1023, 10, 500);
     for (int i = 0; i < LEDS_COUNT; i++)
     {
         digitalWrite(LED_PINS[i], HIGH);

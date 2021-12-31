@@ -149,3 +149,44 @@ int bb[] = {
 #define E Q/2   //eighth 1/8
 #define S Q/4 // sixteenth 1/16
 #define W 4*Q // whole 4/4
+  
+int temp, notes, beats;
+void setup() {
+  pinMode(BUZZER_PIN, OUTPUT);
+  temp = 50;
+}
+
+void loop() {
+  for(int i = 0; i < sizeof(melody); i++){
+    notes = melody[i];
+    beats = bb[i];
+    if(notes == '*'){
+      //pause
+      tone(BUZZER_PIN, 0, beats*temp);
+    }
+    else{
+      playNote(notes, beats*temp);
+    }
+    delay((beats*temp) + temp); 
+  }
+}
+
+void playNote(char note, int duration){
+  // масив для найменування нот у межах двох октав
+  char names[] = {
+    'c', 'r', 'd', 's', 'e', 'f', 't', 'g', 'u', 'a', 'b', 'h',
+    'C', 'R', 'D', 'S', 'E', 'F', 'T', 'G', 'U', 'A', 'B', 'H', 'F'
+  };
+
+  // масив частот нот
+  int tones[] = {
+    261, 277, 293, 311, 329, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 830, 880, 932, 988
+  };
+
+  for(int i = 0; i < sizeof(tones); i++){
+    if(names[i] == note){
+      tone(BUZZER_PIN, tones[i], duration);
+    }
+  }
+}
+

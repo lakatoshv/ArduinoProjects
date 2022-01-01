@@ -169,6 +169,157 @@ void loop() {
     }
     delay((beats*temp) + temp); 
   }
+
+  //tone(pin, note, duration)
+    tone(BUZZER_PIN,LA3,Q);
+    delay(1+Q); //delay duration should always be 1 ms more than the note in order to separate them.
+    tone(BUZZER_PIN,LA3,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,LA3,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,F3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+
+    tone(BUZZER_PIN,LA3,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,F3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,LA3,H);
+    delay(1+H);
+
+    tone(BUZZER_PIN,E4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,E4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,E4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,F4,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+
+    tone(BUZZER_PIN,Ab3,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,F3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,LA3,H);
+    delay(1+H);
+
+    tone(BUZZER_PIN,LA4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,LA3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,LA3,S);
+    delay(1+S);
+    tone(BUZZER_PIN,LA4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,Ab4,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,G4,S);
+    delay(1+S);
+
+    tone(BUZZER_PIN,Gb4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,E4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,F4,E);
+    delay(1+E);
+    delay(1+E);//PAUSE
+    tone(BUZZER_PIN,Bb3,E);
+    delay(1+E);
+    tone(BUZZER_PIN,Eb4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,D4,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,Db4,S);
+    delay(1+S);
+
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,B3,S);
+    delay(1+S);
+    tone(BUZZER_PIN,C4,E);
+    delay(1+E);
+    delay(1+E);//PAUSE QUASI FINE RIGA
+    tone(BUZZER_PIN,F3,E);
+    delay(1+E);
+    tone(BUZZER_PIN,Ab3,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,F3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,LA3,S);
+    delay(1+S);
+
+    tone(BUZZER_PIN,C4,Q);
+    delay(1+Q);
+     tone(BUZZER_PIN,LA3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,E4,H);
+    delay(1+H);
+
+     tone(BUZZER_PIN,LA4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,LA3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,LA3,S);
+    delay(1+S);
+    tone(BUZZER_PIN,LA4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,Ab4,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,G4,S);
+    delay(1+S);
+
+    tone(BUZZER_PIN,Gb4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,E4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,F4,E);
+    delay(1+E);
+    delay(1+E);//PAUSE
+    tone(BUZZER_PIN,Bb3,E);
+    delay(1+E);
+    tone(BUZZER_PIN,Eb4,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,D4,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,Db4,S);
+    delay(1+S);
+
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,B3,S);
+    delay(1+S);
+    tone(BUZZER_PIN,C4,E);
+    delay(1+E);
+    delay(1+E);//PAUSE QUASI FINE RIGA
+    tone(BUZZER_PIN,F3,E);
+    delay(1+E);
+    tone(BUZZER_PIN,Ab3,Q);
+    delay(1+Q);
+    tone(BUZZER_PIN,F3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+
+    tone(BUZZER_PIN,LA3,Q);
+    delay(1+Q);
+     tone(BUZZER_PIN,F3,E+S);
+    delay(1+E+S);
+    tone(BUZZER_PIN,C4,S);
+    delay(1+S);
+    tone(BUZZER_PIN,LA3,H);
+    delay(1+H);
+
+    delay(2*H);
 }
 
 void playNote(char note, int duration){

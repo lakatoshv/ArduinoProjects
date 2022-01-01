@@ -1,3 +1,10 @@
+/// <summary>
+/// Play imperial march from star wars on buzzer.
+/// </summary>
+// <copyright file="imperialMarch.ini" company="lakatoshvv">
+// Copyright (c) lakatoshvv. All rights reserved.
+// </copyright>
+
 const int BUZZER_PIN = 11;
 
 //Imperial march notes array
@@ -157,6 +164,11 @@ void setup() {
 }
 
 void loop() {
+  playMelodyByNotes();
+  playNoteByChord();
+}
+
+void playMelodyByNotes(){
   for(int i = 0; i < sizeof(melody); i++){
     notes = melody[i];
     beats = bb[i];
@@ -169,8 +181,10 @@ void loop() {
     }
     delay((beats*temp) + temp); 
   }
+}
 
-  //tone(pin, note, duration)
+void playNoteByChord(){
+    //tone(pin, note, duration)
     tone(BUZZER_PIN,LA3,Q);
     delay(1+Q); //delay duration should always be 1 ms more than the note in order to separate them.
     tone(BUZZER_PIN,LA3,Q);
@@ -258,14 +272,14 @@ void loop() {
 
     tone(BUZZER_PIN,C4,Q);
     delay(1+Q);
-     tone(BUZZER_PIN,LA3,E+S);
+    tone(BUZZER_PIN,LA3,E+S);
     delay(1+E+S);
     tone(BUZZER_PIN,C4,S);
     delay(1+S);
     tone(BUZZER_PIN,E4,H);
     delay(1+H);
 
-     tone(BUZZER_PIN,LA4,Q);
+    tone(BUZZER_PIN,LA4,Q);
     delay(1+Q);
     tone(BUZZER_PIN,LA3,E+S);
     delay(1+E+S);
@@ -312,7 +326,7 @@ void loop() {
 
     tone(BUZZER_PIN,LA3,Q);
     delay(1+Q);
-     tone(BUZZER_PIN,F3,E+S);
+    tone(BUZZER_PIN,F3,E+S);
     delay(1+E+S);
     tone(BUZZER_PIN,C4,S);
     delay(1+S);
@@ -320,7 +334,7 @@ void loop() {
     delay(1+H);
 
     delay(2*H);
-}
+  }
 
 void playNote(char note, int duration){
   // масив для найменування нот у межах двох октав

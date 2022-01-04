@@ -36,4 +36,12 @@ void loop()
      digitalWrite(PIN_L1,LOW);
      digitalWrite(PIN_L2,HIGH);
      delay(2000);
+ //Go back
+     analogWrite(SPEED_PIN_EA,100);
+     analogWrite(SPEED_PIN_EB,100);
+     digitalWrite(PIN_L4,HIGH);
+     digitalWrite(PIN_L3,LOW);
+     digitalWrite(PIN_L1,HIGH);
+     digitalWrite(PIN_L2,LOW);
+     delay(2000);
  }

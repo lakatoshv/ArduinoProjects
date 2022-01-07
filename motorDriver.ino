@@ -60,4 +60,10 @@ void loop()
      digitalWrite(PIN_L1,LOW);
      digitalWrite(PIN_L2,HIGH);
      delay(2000);
+ //Stop
+     digitalWrite(PIN_L4,HIGH);
+     digitalWrite(PIN_L3,HIGH);
+     digitalWrite(PIN_L1,HIGH);
+     digitalWrite(PIN_L2,HIGH);
+     delay(2000);
  }

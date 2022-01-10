@@ -30,14 +30,7 @@ void loop()
 {
     goForward();
     goBack();
- //Go left
-     analogWrite(SPEED_PIN_EA,60);
-     analogWrite(SPEED_PIN_EB,60);
-     digitalWrite(PIN_L4,LOW);
-     digitalWrite(PIN_L3,HIGH);
-     digitalWrite(PIN_L1,HIGH);
-     digitalWrite(PIN_L2,LOW);
-     delay(2000);
+    goLeft();
  //Go right
      analogWrite(SPEED_PIN_EA,60);
      analogWrite(SPEED_PIN_EB,60);
@@ -69,6 +62,16 @@ void goBack() {
     analogWrite(SPEED_PIN_EB,100);
     digitalWrite(PIN_L4,HIGH);
     digitalWrite(PIN_L3,LOW);
+    digitalWrite(PIN_L1,HIGH);
+    digitalWrite(PIN_L2,LOW);
+    delay(2000);
+}
+
+void goLeft() {
+    analogWrite(SPEED_PIN_EA,60);
+    analogWrite(SPEED_PIN_EB,60);
+    digitalWrite(PIN_L4,LOW);
+    digitalWrite(PIN_L3,HIGH);
     digitalWrite(PIN_L1,HIGH);
     digitalWrite(PIN_L2,LOW);
     delay(2000);

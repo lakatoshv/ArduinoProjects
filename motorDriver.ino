@@ -32,12 +32,7 @@ void loop()
     goBack();
     goLeft();
     goRight();
- //Stop
-     digitalWrite(PIN_L4,HIGH);
-     digitalWrite(PIN_L3,HIGH);
-     digitalWrite(PIN_L1,HIGH);
-     digitalWrite(PIN_L2,HIGH);
-     delay(2000);
+    stop();
  }
 
 void goForward() {
@@ -76,6 +71,14 @@ void goRight() {
     digitalWrite(PIN_L4,HIGH);
     digitalWrite(PIN_L3,LOW);
     digitalWrite(PIN_L1,LOW);
+    digitalWrite(PIN_L2,HIGH);
+    delay(2000);
+}
+
+void stop() {
+    digitalWrite(PIN_L4,HIGH);
+    digitalWrite(PIN_L3,HIGH);
+    digitalWrite(PIN_L1,HIGH);
     digitalWrite(PIN_L2,HIGH);
     delay(2000);
 }

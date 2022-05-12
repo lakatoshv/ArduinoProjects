@@ -27,6 +27,19 @@ void loop()
     {
         APDS.readColor(red, green, blue);
     }
+
+    turnOnRGBLed(RED_PIN, red);
+    turnOnRGBLed(BLUE_PIN, blue);
+    turnOnRGBLed(GREEN_PIN, green);
     delay(100);
+}
+
+/// <summary>
+/// Turn on RGB led.
+/// </summary>
+/// <param name="ledPin">led pin.</param>
+/// <param name="value">value.</param>
+turnOnRGBLed(int ledPin, int value){
+    analogWrite(ledPin, value);
 }
 

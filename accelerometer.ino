@@ -30,4 +30,11 @@ void loop() {
   Serial.println(mpu6050.getAccAngleX());
   Serial.println(" Angle Y: ");
   Serial.println(mpu6050.getAccAngleY());
+
+  // paint chart
+  Serial.println(mpu6050.getAccAngleX());
+  Serial.println(" ");
+  Serial.println(mpu6050.getAccAngleY());
+
+  delay(50);
 }

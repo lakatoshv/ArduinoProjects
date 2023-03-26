@@ -21,20 +21,20 @@ void loop() {
   mpu6050.update();
 
   Serial.println("Gyro X: ");
-  Serial.println(mpu6050.getGyroX());
-  Serial.println(" Gyro Y: ");
-  Serial.println(mpu6050.getGyroY());
-  Serial.println(" Gyro Z: ");
-  Serial.println(mpu6050.getGyroZ());
-  Serial.println(" Angle X: ");
-  Serial.println(mpu6050.getAccAngleX());
-  Serial.println(" Angle Y: ");
-  Serial.println(mpu6050.getAccAngleY());
+  Serial.print(mpu6050.getGyroX());
+  Serial.print(" Gyro Y: ");
+  Serial.print(mpu6050.getGyroY());
+  Serial.print(" Gyro Z: ");
+  Serial.print(mpu6050.getGyroZ());
+  Serial.print(" Angle X: ");
+  Serial.print(mpu6050.getAccAngleX());
+  Serial.print(" Angle Y: ");
+  Serial.print(mpu6050.getAccAngleY());
 
   // paint chart
   Serial.println(mpu6050.getAccAngleX());
-  Serial.println(" ");
-  Serial.println(mpu6050.getAccAngleY());
+  Serial.print(" ");
+  Serial.print(mpu6050.getAccAngleY());
 
   delay(50);
 }

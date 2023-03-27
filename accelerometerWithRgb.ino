@@ -19,6 +19,13 @@ int red;
 int green;
 int blue;
 
+// pauses
+const int MIN_PAUSE=10;
+const int MAX_PAUSE=100;
+const int VIEW_PAUSE=2000;
+
+int pause;
+
 void setup() {
   Serial.begin(9600);
   Wire.begin();
@@ -32,9 +39,32 @@ void loop() {
   green = 255 - mpu6050.getGyroY();
   blue = 255 - mpu6050.getGyroZ();
 
-  analogWrite(RED_PIN, red);
-  analogWrite(GREEN_PIN, green);
-  analogWrite(BLUE_PIN, blue);
+  setRGB(red, green, blue);
 
-  delay(50);
+  setpause();
+}
+
+/// <summary>
+/// Set color to RGB.
+/// </summary>
+/// <param name="r">red.</param>
+/// <param name="g">green.</param>
+/// <param name="b">blue.</param>
+void setRGB(int r, int g, int b)
+{
+    analogWrite(RED_PIN, r);
+    analogWrite(GREEN_PIN, g);
+    analogWrite(BLUE_PIN, b);
+    delay(pause);
+}
+
+/// <summary>
+/// Set pause time from potentiometer.
+/// </summary>
+void setpause()
+{
+    pause = map(analogRead(POTENTIOMETER_PIN), 0, 1024, MIN_PAUSE, MAX_PAUSE);
+    Serial.print("pause = ");
+    Serial.println(pause);
+    delay(VIEW_PAUSE); 
 }
